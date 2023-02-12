@@ -53,6 +53,7 @@ def getHtml(url):
               'html has been uploaded to a file...')
         driver.close()
         driver.quit()
+        parseHtml('indexSelenium.html')
 
 def parseHtml(html):
     print('Unloading a file...')
@@ -64,10 +65,11 @@ def parseHtml(html):
     schedule = [x.text for x in schedule]
     print('Result:\n')
     [print(x) for x in schedule]
+    print('\n')
+    getHtml('https://www.rksi.ru/schedule')
 
 def main():
     getHtml('https://www.rksi.ru/schedule')
-    parseHtml('indexSelenium.html')
 
 if __name__ == '__main__':
     main()
