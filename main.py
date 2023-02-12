@@ -73,9 +73,11 @@ def parseHtml(html):
         src = file.read()
     print('The parser has started his work...')
     soup = bs(src, 'lxml')
+    objOfSearch = soup.find_all('h3')[1].text
     schedule = soup.find_all('b')
     schedule = [x.text for x in schedule]
     print('Result:\n')
+    print(f'{objOfSearch}\n')
     [print(x) for x in schedule]
     print('\n')
     getHtml('https://www.rksi.ru/schedule')
